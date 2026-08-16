@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAM & SSD Market Price Tracker | Japan vs Malaysia</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>RAM & M.2 NVMe SSD Price Tracker</h1>
+      <p class="subtitle">Daily Price Comparison: Japan (Rakuten) vs Malaysia (Shopee)</p>
+      <div class="meta-bar">
+        <span id="update-time">Last updated: Loading...</span>
+        <div class="currency-selector">
+          <label>Currency:</label>
+          <button class="curr-btn active" onclick="setCurrency('JPY')">JPY (¥)</button>
+          <button class="curr-btn" onclick="setCurrency('MYR')">MYR (RM)</button>
+          <button class="curr-btn" onclick="setCurrency('USD')">USD ($)</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- DDR4 Laptop RAM -->
+      <section class="card">
+        <h2>Laptop RAM (DDR4 SO-DIMM)</h2>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Capacity</th>
+                <th>Japan (Rakuten)</th>
+                <th>Malaysia (Shopee)</th>
+              </tr>
+            </thead>
+            <tbody id="ram-ddr4-table-body">
+              <tr><td colspan="5" class="loading">Loading data...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- DDR5 Laptop RAM -->
+      <section class="card">
+        <h2>Laptop RAM (DDR5 SO-DIMM)</h2>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Capacity</th>
+                <th>Japan (Rakuten)</th>
+                <th>Malaysia (Shopee)</th>
+              </tr>
+            </thead>
+            <tbody id="ram-ddr5-table-body">
+              <tr><td colspan="5" class="loading">Loading data...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- PCIe 3.0 SSD -->
+      <section class="card">
+        <h2>M.2 2280 NVMe SSD (PCIe 3.0)</h2>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Capacity</th>
+                <th>Japan (Rakuten)</th>
+                <th>Malaysia (Shopee)</th>
+              </tr>
+            </thead>
+            <tbody id="ssd-gen3-table-body">
+              <tr><td colspan="5" class="loading">Loading data...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- PCIe 4.0 SSD -->
+      <section class="card">
+        <h2>M.2 2280 NVMe SSD (PCIe 4.0)</h2>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Capacity</th>
+                <th>Japan (Rakuten)</th>
+                <th>Malaysia (Shopee)</th>
+              </tr>
+            </thead>
+            <tbody id="ssd-gen4-table-body">
+              <tr><td colspan="5" class="loading">Loading data...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

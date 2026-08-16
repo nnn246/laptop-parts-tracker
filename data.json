@@ -1,0 +1,18 @@
+{
+  "last_updated": "2026-08-16 03:00",
+  "exchange_rates": {
+    "MYR_JPY": 33.5,
+    "USD_JPY": 155.0
+  },
+  "ram": [
+    { "brand": "Crucial", "type": "DDR4", "capacity": "8GB", "rakuten_jpy": 3100, "shopee_myr": 90 },
+    { "brand": "Crucial", "type": "DDR4", "capacity": "16GB", "rakuten_jpy": 5200, "shopee_myr": 150 },
+    { "brand": "Crucial", "type": "DDR5", "capacity": "16GB", "rakuten_jpy": 7400, "shopee_myr": 210 },
+    { "brand": "Samsung", "type": "DDR5", "capacity": "32GB", "rakuten_jpy": 15000, "shopee_myr": null }
+  ],
+  "ssd": [
+    { "brand": "Crucial", "spec": "PCIe 3.0", "capacity": "1TB", "rakuten_jpy": 7800, "shopee_myr": 230 },
+    { "brand": "Crucial", "spec": "PCIe 4.0", "capacity": "1TB", "rakuten_jpy": 9800, "shopee_myr": 290 },
+    { "brand": "Western Digital", "spec": "PCIe 4.0", "capacity": "2TB", "rakuten_jpy": 21000, "shopee_myr": 610 }
+  ]
+}
