@@ -42,17 +42,6 @@ function formatPrice(priceJPY, priceMYR) {
   return '-';
 }
 
-function createShopCell(info) {
-  if (!info || !info.price) return '<td>-</td>';
-  const priceStr = formatPrice(info.price_jpy || (currentCurrency === 'JPY' ? info.price : null), info.price_myr || (currentCurrency === 'MYR' ? info.price : null));
-  const shopName = info.shop ? info.shop : 'Store Link';
-  
-  if (info.url) {
-    return `<td><div><strong>${priceStr}</strong></div><div style="font-size:0.8em;"><a href="${info.url}" target="_blank" rel="noopener">${shopName}</a></div></td>`;
-  }
-  return `<td><div><strong>${priceStr}</strong></div></td>`;
-}
-
 function renderTable(items, tbodyId) {
   const tbody = document.getElementById(tbodyId);
   if (!tbody) return;
@@ -64,12 +53,15 @@ function renderTable(items, tbodyId) {
   
   let html = '';
   items.forEach(item => {
+    const rakutenText = item.rakuten_jpy ? formatPrice(item.rakuten_jpy, null) : '-';
+    const shopeeText = item.shopee_myr ? formatPrice(null, item.shopee_myr) : '-';
+
     html += `<tr>
       <td>${item.brand || '-'}</td>
       <td>${item.model || '-'}</td>
       <td>${item.capacity || '-'}</td>
-      ${createShopCell(item.rakuten)}
-      ${createShopCell(item.shopee)}
+      <td><strong>${rakutenText}</strong></td>
+      <td><strong>${shopeeText}</strong></td>
     </tr>`;
   });
   
