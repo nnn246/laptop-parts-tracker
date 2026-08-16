@@ -1,0 +1,39 @@
+name: Daily Price Data Update
+
+on:
+  schedule:
+    - cron: '0 18 * * *' # 毎日日本時間 AM 3:00 に自動実行
+  workflow_dispatch: # 手動実行ボタン用
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install Dependencies
+        run: |
+          pip install requests playwright
+          playwright install chromium
+
+      - name: Fetch Prices
+        run: python fetch_prices.py
+
+      - name: Upload data.json to CoreServer via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./
+          server-dir: /public_html/parts/
+          state-name: .ftp-deploy-sync-state.json
+          exclude: |
+            **/*
+            !data.json
